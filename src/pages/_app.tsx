@@ -6,6 +6,8 @@ import NextNProgress from "nextjs-progressbar";
 import { ToastContainer, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 
+import { Loading } from "src/components/Loading/Loading";
+
 import SEO from "../../next-seo.config";
 import Header from "../components/Header";
 import ScrollToTop from "../components/ScrollToTop";
@@ -14,6 +16,7 @@ import { ThemeContextProvider } from "../contexts/Theme";
 import GlobalStyles from "../styles/GlobalStyle";
 
 function MyApp({ Component, pageProps }: AppProps) {
+    const [isLoading, setIsLoading] = useState(true);
     const { asPath } = useRouter();
 
     return (
@@ -33,7 +36,8 @@ function MyApp({ Component, pageProps }: AppProps) {
             <NextNProgress color="#2F80ED" startPosition={0.5} />
             <ThemeContextProvider>
                 <AuthProvider>
-                    {asPath === "/" || asPath === "/signup" ? (
+                    {isLoading ? <Loading /> : "Not Loading"}
+                    {/* {asPath === "/" || asPath === "/signup" ? (
                         <>
                             <AnimatePresence exitBeforeEnter>
                                 <Component {...pageProps} key={asPath} />
@@ -49,7 +53,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                             <ScrollToTop />
                             <GlobalStyles />
                         </>
-                    )}
+                    )} */}
                 </AuthProvider>
             </ThemeContextProvider>
         </>
@@ -57,3 +61,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 }
 
 export default MyApp;
+function useState(arg0: boolean): [any, any] {
+    throw new Error("Function not implemented.");
+}

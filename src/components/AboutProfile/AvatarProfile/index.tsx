@@ -5,7 +5,7 @@ import React, { useContext, useState } from "react";
 import { IAvatarProfile } from "../../../@types";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { CLOUDINARY_URL } from "../../../utils/constants";
-import Dropzone from "../../Dropzone";
+import Dropzone from "../../Dropzone/Dropzone";
 import Modal from "../../Modal";
 import * as S from "./styles";
 

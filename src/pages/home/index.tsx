@@ -2,7 +2,6 @@ import { GetServerSideProps } from "next";
 import { useEffect } from "react";
 
 import { ITweet } from "../../@types";
-import LittleLoading from "../../components/LittleLoading";
 import NextSEO from "../../components/NextSEO";
 import Trends from "../../components/Trends";
 import Tweet from "../../components/Tweet";

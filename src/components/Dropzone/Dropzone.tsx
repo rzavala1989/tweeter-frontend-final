@@ -6,6 +6,7 @@ import { AuthContext } from "src/contexts/AuthContext";
 import api from "src/services/api";
 import { useSWRConfig } from "swr";
 
+import { Loading } from "../Loading/Loading";
 import * as S from "./styles";
 
 const Dropzone: React.FC<IDropzone> = ({ imageName, setIsActive }) => {
@@ -41,16 +42,9 @@ const Dropzone: React.FC<IDropzone> = ({ imageName, setIsActive }) => {
     };
     const { getRootProps, getInputProps, isDragReject, isDragActive } =
         useDropzone({
-            maxFiles: 1,
-            maxSize: 5 * 1000 * 1000,
-            accept: {
-                "image/png": [".png"],
-                "image/jpg": [".jpg"],
-                "image/jpeg": [".jpeg"],
-            },
+            accept: "image/*",
             onDropAccepted,
         });
-
     return (
         <>
             <S.Container

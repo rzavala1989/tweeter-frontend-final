@@ -3,7 +3,7 @@ import React from "react";
 import { useContext, useState } from "react";
 
 import { IBackgroundProfile } from "../../@types";
-import Dropzone from "../../components/Dropzone";
+import Dropzone from "../Dropzone/Dropzone";
 import Modal from "../../components/Modal";
 import { AuthContext } from "../../contexts/AuthContext";
 import { CLOUDINARY_URL } from "../../utils/constants";
